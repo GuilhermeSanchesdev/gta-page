@@ -1,0 +1,83 @@
+@media (max-width: 1024px) {
+    /* media query: de 1024 para baixo, ele irá aplicar a regra/código.  */
+
+    /* min-width -> quando a largura estiver acima de 1024, ele aplicará a regra. */
+
+    /* busque a classe desejada para a alteração */
+    .cabecalho {
+        /* display flex funciona no conceito pai e filho - estamos trabalhando na classe cabeçalho, que é o pai - primeira div abaixo do mesmo é filho, junto com a nav de ul classificada em menu, ou seja, os dois próximos elementos abaixo do pai serão os fihos, onde o display: flex irá agir - display: flex foi habilitado na classe cabecalho dentro do estilos.css*/
+        justify-content: center;
+        flex-direction: column;
+        padding: 50px 0;
+        gap: 15px;
+    }
+
+    .cabecalho .menu li a {
+        padding: 15px;
+    }
+
+    .home .informacoes {
+        padding: 30px;
+    }
+
+    .home .informacoes img {
+        max-width: 100px;
+    }
+
+    .home .informacoes .titulo {
+        font-size: 40px;
+    }
+
+    .compre-ja .card {
+        /* quando o assunto for responsivo, não utilize larguras absolutas -> px
+        sempre porcentagem, para que ele se adeque à tela */
+        width: 70%;
+    }
+}
+
+@media (max-width: 768px) {
+    .compre-ja {
+        padding: 30px;
+    }
+
+    .compre-ja .card {
+        padding: 80px 20px;
+        width: 100%;
+    }
+
+    .compre-ja .informacoes h3 {
+        font-size: 35px;
+    }
+
+    .compre-ja .informacoes .plataformas {
+        /* display: flex já está nos estilos.css */
+        flex-direction: column;
+    }
+
+    .btn-plataforma {
+        margin-top: 15px;
+        padding: 15px;
+    }
+
+    .btn-comprar {
+        width: 100%;
+    }
+}
+
+@media (max-width: 425px) {
+    main::after {
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4) 100%, transparent 65%);
+    }
+
+    .compre-ja .card .capa-do-jogo {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 375px) {
+
+    .home .informacoes .titulo {
+        font-size: 40px;
+    }
+
+}

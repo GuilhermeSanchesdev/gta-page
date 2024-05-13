@@ -1,0 +1,248 @@
+body {
+    background-color: #282828;
+    color: #fff;
+
+}
+
+.cabecalho {
+    height: 80px;
+    /* Altura */
+    background-color: #0b0b0b;
+    display: flex;
+    /* é usada para exibir elementos como uma linha ou coluna flexível. */
+    flex-direction: row;
+    /* Direção em linha/isso já vem no display:flex; não precisaria colocar */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+    border-bottom: 1px solid #282828;
+}
+
+.cabecalho .logo {
+    display: flex;
+    /* colocar em linha/um do lado do outro */
+    gap: 30px;
+    /* propriedade do display flex, gap= espaçamento, espaçamento entre os itens/filhos de 30px */
+}
+
+.cabecalho .menu {
+    display: flex;
+    gap: 30px;
+}
+
+.cabecalho .menu li a {
+    /* estilizar tags A dentro da LI dentro da class .menu que está dentro da class .cabecalho */
+    padding: 30px;
+    color: #e8e8e8;
+    font-weight: bolder;
+    font-size: 15px;
+    font-family: 'Chalet';
+}
+
+.cabecalho .menu li a:hover {
+    border-bottom: 2px solid #fff;
+}
+
+/* acabamos o cabeçalho, agora estilizar a HOME */
+
+.home {
+    display: flex;
+    /* colocar um elemento um do lado do outro */
+    position: relative;
+    min-height: calc(100vh - 80px);
+    /* vh - view port (altura janela do navegador) - 80 px (cabecalho possui 80 px) */
+}
+
+.home::after {
+    /* after está dentro da home */
+    content: '';
+    position: absolute;
+    /* aplicará por cima da página, ou seja, o efeito gradient ficará por cima, consequentemente, aplicando-o. */
+    height: 100%;
+    /*aplicará na altura toda da tag main com a classe home */
+    width: 100%;
+    /*aplicará na largura toda da tag main com a classe home */
+    background: linear-gradient(90deg, rgba(0, 0, 0, .85), rgba(0, 0, 0, .7) 35%, transparent 65%);
+}
+
+.home .imagem-fundo {
+    width: 100%;
+    object-fit: cover;
+    /* para que a imagem não perca a proporção */
+}
+
+.home .informacoes {
+    position: absolute;
+    /* tira os elementos do fluxo normal, como se fossem folhas uma em cima da outra*/
+    z-index: 1;
+    /* se quer colocar um elemento por cima, use o z-index, colocando valor 1, você diz que ele tem mais prioridades do que os outros, colocando-o por cima de todos */
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    padding: 80px 80px 80px 170px;
+    max-width: 780px;
+}
+
+.home .informacoes img {
+    max-width: 150px;
+    /* largura max*/
+}
+
+.home .informacoes .lista-de-jogos {
+    display: flex;
+    gap: 32px;
+    /* usamos o display flex para poder usar o gap*/
+}
+
+.home .informacoes .titulo {
+    font-family: 'ChaletComprime';
+    font-size: 55px;
+}
+
+.home .informacoes .texto {
+    font-family: 'Chalet';
+    font-size: 18px;
+    line-height: 1.6;
+    /* altura da linha*/
+}
+
+.btn-comprar, .btn-plataforma {
+    background-color: rgba(255, 255, 255, .1);
+    border: 0.5px solid #fff;
+    border-radius: 4px;
+    font-family: 'ChaletComprime';
+    font-size: 28px;
+    text-align: center;
+    padding: 20px 40px;
+    text-transform: uppercase;
+    /* transforma todo o texto em maiúsculo*/
+    width: 50%;
+    transition: all .3s ease-in;
+}
+
+.btn-plataforma{
+    color: #fff;
+    width: 100%;
+    cursor: pointer;
+}
+
+.btn-comprar:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.compre-ja .capa-do-jogo {
+    width: 270px;
+}
+
+.compre-ja {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 50px;
+    align-items: center;
+}
+
+.compre-ja .titulo-2 {
+    font-family: 'ChaletComprime';
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.compre-ja .card {
+    display: flex;
+    flex-direction: column;
+    /*queremos que fique um embaixo do outro, então, colocamos column*/
+    align-items: center;
+    background-color: #000;
+    width: 50%;
+    border-radius: 10px;
+    padding: 80px;
+    gap: 40px;
+}
+
+.compre-ja .informacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.compre-ja .informacoes h3 {
+    font-family: 'ChaletComprime';
+    font-size: 52px;
+    font-weight: 700;
+}
+
+.compre-ja .informacoes p {
+    color: #e8e8e8;
+    font-family: 'Chalet';
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.compre-ja .informacoes .plataformas{
+    display: flex;
+    flex-wrap: wrap; /*quando não tiver espaço no elemento pai, quebre os itens para baixo*/
+    gap: 32px;
+    justify-content: center;
+}
+
+.compre-ja .btn-plataforma .plataformas{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all .3s ease-in;
+    display: none;
+    opacity: 0;
+}
+
+.compre-ja .btn-plataforma .plataformas.ativo{
+    display: flex;
+    opacity: 1;
+}
+
+.compre-ja .btn-plataforma .plataformas li{
+    padding: 20px;
+}
+
+.compre-ja  .btn-plataforma .plataformas li:nth-child(1){
+    border: 1px solid #00439c;
+}
+
+.compre-ja  .btn-plataforma .plataformas li:nth-child(1):hover{
+    background-color: #00439c;
+}
+.compre-ja  .btn-plataforma .plataformas li:nth-child(2){
+    border: 1px solid #387a26;
+}
+
+.compre-ja  .btn-plataforma .plataformas li:nth-child(2):hover{
+    background-color: #387a26;
+}
+
+.compre-ja .btn-plataforma .plataformas li:nth-child(3) {
+    border: 1px solid #00439c;
+}
+
+.compre-ja .btn-plataforma .plataformas li:nth-child(3):hover {
+    background-color: #00439c;
+}
+
+.compre-ja .btn-plataforma .plataformas li:nth-child(4) {
+    border: 1px solid #387a26; 
+}
+
+.compre-ja .btn-plataforma .plataformas li:nth-child(4):hover {
+    background-color: #387a26;
+}
+.compre-ja .btn-plataforma .plataformas li:nth-child(5) {
+    border: 1px solid #fcaf17; 
+}
+
+.compre-ja .btn-plataforma .plataformas li:nth-child(5):hover {
+    background-color: #fcaf17;
+}
